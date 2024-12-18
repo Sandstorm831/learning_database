@@ -9,6 +9,7 @@ interface ENV{
     AIVEN_USER: string | undefined;
     AIVEN_PORT: number | undefined;
     PSQL_URI: string | undefined;
+    POSTGRES_LOCAL_URI: string | undefined;
 }
 
 interface Config{
@@ -19,6 +20,7 @@ interface Config{
     AIVEN_USER: string;
     AIVEN_PORT: number;
     PSQL_URI: string;
+    POSTGRES_LOCAL_URI: string;
 }
 
 // Loading process.env variables as ENV 
@@ -31,7 +33,7 @@ const getConfig = ():ENV => {
         AIVEN_USER: process.env.AIVEN_USER,
         AIVEN_PORT: process.env.AIVEN_PORT ? Number(process.env.AIVEN_PORT) : undefined,
         PSQL_URI: process.env.PSQL_URI,
-
+        POSTGRES_LOCAL_URI: process.env.POSTGRES_LOCAL_URI,
     }
 }   
 

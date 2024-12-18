@@ -7,7 +7,7 @@ namespace NodeJS{
         AIVEN_USER: string;
         AIVEN_PORT: number;
         PSQL_URI: string;
-
+        POSTGRES_LOCAL_URI: string;
     }
 } 
 // edit the tsconfig file to add the path of this file in "typeRoots" variable along side "./node_modules/@types"

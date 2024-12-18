@@ -28,3 +28,20 @@ model Post {
   author    User    @relation(fields: [authorId], references: [id])
   authorId  Int
 }
+
+model UserT {
+  id Int @id @default(autoincrement())
+  username String @unique
+  password String
+  firstName String?
+  lastName String?
+  Todos Todos[]
+}
+
+model Todos{
+  id Int @id @default(autoincrement())
+  description String?
+  done Boolean @default(false)
+  userId Int
+  author UserT @relation(fields: [userId], references: [id])
+}
